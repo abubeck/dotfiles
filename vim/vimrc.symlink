@@ -1,17 +1,29 @@
 au BufRead,BufNewFile *.smach_model setfiletype smach_model
 syntax on
 
+
+" color settting
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
+
 " Highlight current line
 set cursorline
 
 " Enable mouse in all modes
 set mouse=a
 
-" Allow backspace in insert mode
-set backspace=indent,eol,start
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
 
-set number 
+set number
 
+
+" Show matching brackets when text indicator is over them
+set showmatch
+" " How many tenths of a second to blink when matching brackets
+set mat=2
 
 set autoindent
 set smartindent
@@ -29,3 +41,33 @@ set list listchars=tab:\ \ ,trail:·
 
 set nowrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points
+
+" Set extra options when running in GUI mode
+"if has("gui_running")
+"  set guioptions-=T
+"  set guioptions+=e
+"  set t_Co=256
+"  set guitablabel=%M\ %t
+"endif
+
+
+""""""""""""""""""""""""""""""
+" => Status line
+""""""""""""""""""""""""""""""
+" Always show the status line
+set laststatus=2
+
+" Format the status line
+set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+
+
+
+" Returns true if paste mode is enabled
+function! HasPaste()
+  if &paste
+    return 'PASTE MODE  '
+  en
+  return ''
+endfunction
+
+
