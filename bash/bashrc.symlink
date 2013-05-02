@@ -2,6 +2,14 @@
 if [ -n "$DISPLAY" -a "$TERM" == "xterm" ]; then
   export TERM=xterm-256color
 fi
+if [ $(uname) = "Darwin" ]; then
+  eval `gdircolors ~/.dotfiles/bash/dircolors.256dark`
+  alias ls='gls --color'
+else
+  eval `dircolors ~/.dotfiles/bash/dircolors.256dark`
+  alias ls='ls --color'
+fi
+
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
