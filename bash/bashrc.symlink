@@ -21,7 +21,7 @@ source ~/.dotfiles/bash/git-prompt.bash
 
 
 # ROS specific settings
-source /opt/ros/fuerte/setup.bash
+source /opt/ros/groovy/setup.bash
 
 #export ROS_PACKAGE_PATH=~/git/care-o-bot:$ROS_PACKAGE_PATH
 
