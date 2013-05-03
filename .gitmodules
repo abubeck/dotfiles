@@ -1,0 +1,3 @@
+[submodule "wunder/Wunderlist2ApiJS"]
+	path = wunder/Wunderlist2ApiJS
+	url = https://github.com/rushis/Wunderlist2ApiJS.git
