@@ -2,3 +2,5 @@ alias git='hub'
 alias gs='git status'
 alias gsu='git status -uno'
 alias gcm='git commit -m '
+
+alias wunder="node ~/.dotfiles/wunder/wunder.js"
