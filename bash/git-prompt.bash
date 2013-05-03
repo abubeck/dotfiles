@@ -28,7 +28,7 @@ style_chars="${SOLAR_WHITE}"
 style_branch="${SOLAR_CYAN}"
 
 function unpushed {
-    $git cherry -v @{upstream} 2>/dev/null
+    git cherry -v @{upstream} 2>/dev/null
 }
 
 function need_push {
