@@ -1,6 +1,9 @@
 au BufRead,BufNewFile *.smach_model setfiletype smach_model
+au BufRead,BufNewFile *.ros_package setfiletype yaml
 syntax on
 
+set autoread
+:au CursorHold * checktime
 
 " color settting
 set background=dark
