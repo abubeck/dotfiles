@@ -1,0 +1,27 @@
+# Ctrl-a as prefix instead of Ctrl-b
+set -g prefix C-a
+unbind C-b
+# have `C-a C-a` send C-a keypress to the current window
+bind C-a send-prefix
+
+set -g mode-mouse on
+
+# start numbering windows from 1 instead of zero
+set -g base-index 1
+
+# syntax highlighting in Vim
+set -g default-terminal "screen-256color"
+
+# status bar color
+set -g status-bg '#333333'
+set -g status-fg '#aaaaaa'
+set -g status-left-fg 'white'
+set -g window-status-current-fg 'red'
+
+# disable possibly set visual editor
+set-environment -gu GEM_EDITOR
+
+# status bar contents
+set -g status-left-length 15
+set -g status-right '#(cat ~/.current_robot)@#(cat ~/.current_robot_env)'
+set -g status-interval 15
