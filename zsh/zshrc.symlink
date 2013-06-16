@@ -1,4 +1,4 @@
-
+if [ "$TMUX" = "" ]; then tmux; fi
 
 
 # autoload -U add-zsh-hook
@@ -55,3 +55,12 @@ else
   eval `dircolors ~/.dotfiles/bash/dircolors.256dark`
   alias ls='ls --color'
 fi
+
+source `cat ~/.current_ws`/setup.zsh
+export ROBOT=`cat ~/.current_robot`
+export ROBOT_ENV=`cat ~/.current_robot_env`
+setrobot(){echo "$*" > ~/.current_robot && export ROBOT=`cat ~/.current_robot`}
+setenv(){echo "$*" > ~/.current_robot_env && export ROBOT_ENV=`cat ~/.current_robot_env`}
+
+setws(){pwd > ~/.current_ws && source `cat ~/.current_ws`/setup.zsh}
+sourcethis(){source setup.zsh}
