@@ -46,6 +46,9 @@ autoload colors && colors
 autoload -U compinit
 compinit -i
 
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE=~/.history
 
 # Coloured ls
 if [ $(uname) = "Darwin" ]; then
@@ -55,6 +58,8 @@ else
   eval `dircolors ~/.dotfiles/bash/dircolors.256dark`
   alias ls='ls --color'
 fi
+
+export PATH=$PATH:~/.dotfiles/bin
 
 source `cat ~/.current_ws`/setup.zsh
 export ROBOT=`cat ~/.current_robot`
