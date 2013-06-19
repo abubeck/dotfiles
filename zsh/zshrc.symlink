@@ -1,4 +1,5 @@
-if [ "$TMUX" = "" ]; then tmux; fi
+#if [ "$TMUX" = "" ]; then tmux; fi
+export TERM="xterm-256color"
 
 
 # autoload -U add-zsh-hook
@@ -60,8 +61,10 @@ else
 fi
 
 export PATH=$PATH:~/.dotfiles/bin
+alias tmux="tmux -2"
 
-source `cat ~/.current_ws`/setup.zsh
+
+#source `cat ~/.current_ws`/setup.zsh
 export ROBOT=`cat ~/.current_robot`
 export ROBOT_ENV=`cat ~/.current_robot_env`
 setrobot(){echo "$*" > ~/.current_robot && export ROBOT=`cat ~/.current_robot`}
