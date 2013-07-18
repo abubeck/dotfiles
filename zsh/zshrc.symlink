@@ -72,3 +72,6 @@ setenv(){echo "$*" > ~/.current_robot_env && export ROBOT_ENV=`cat ~/.current_ro
 
 setws(){pwd > ~/.current_ws && source `cat ~/.current_ws`/setup.zsh}
 sourcethis(){source setup.zsh}
+
+export PATH=/usr/local/bin:/usr/local/share/python:$PATH
+export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"

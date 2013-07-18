@@ -40,3 +40,6 @@ source ~/.dotfiles/bash/git-prompt.bash
 
 export ROBOT=cob3-3
 export ROBOT_ENV=ipa-apartment
+
+export PATH=/usr/local/bin:/usr/local/share/python:$PATH
+export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"

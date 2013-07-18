@@ -61,7 +61,7 @@ set linebreak    "Wrap lines at convenient points
 set laststatus=2
 
 " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
+"set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
 
 
@@ -74,3 +74,26 @@ function! HasPaste()
 endfunction
 
 
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'bling/vim-airline'
+
+
+filetype plugin indent on     " Required!
+
+NeoBundleCheck
+
+let g:Powerline_theme="skwp"
+
+let g:Powerline_colorscheme="skwp"
+
+let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts = 1

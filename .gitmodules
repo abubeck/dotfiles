@@ -1,3 +1,6 @@
 [submodule "wunder/Wunderlist2ApiJS"]
 	path = wunder/Wunderlist2ApiJS
 	url = https://github.com/rushis/Wunderlist2ApiJS.git
+[submodule "vim/vim.symlink/bundle/neobundle.vim"]
+	path = vim/vim.symlink/bundle/neobundle.vim
+	url = git://github.com/Shougo/neobundle.vim
