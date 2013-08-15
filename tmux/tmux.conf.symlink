@@ -13,15 +13,30 @@ set -g base-index 1
 set -g default-terminal "screen-256color"
 
 # status bar color
-set -g status-bg '#333333'
-set -g status-fg '#aaaaaa'
-set -g status-left-fg 'white'
-set -g window-status-current-fg 'red'
+#set -g status-bg '#333333'
+#set -g status-fg '#aaaaaa'
+#set -g status-left-fg 'white'
+#set -g window-status-current-fg 'red'
+
+if-shell 'test -z "$POWERLINE_COMMAND"' 'if-shell "which powerline-client" "set-environment -g POWERLINE_COMMAND powerline-client" "set-environment -g POWERLINE_COMMAND powerline"'
+set -g status on
+set -g status-utf8 on
+set -g status-interval 4
+set -g status-fg colour231
+set -g status-bg colour234
+set -g status-left-length 20
+set -g status-left '#[fg=colour16,bg=colour254,bold] #S #[fg=colour254,bg=colour234,nobold]#(eval $POWERLINE_COMMAND tmux left)'
+set -g status-right '#[fg=colour241,bg=default,nobold,noitalics,nounderscore] #[fg=colour247,bg=default,nobold,noitalics,nounderscore] R: #(cat ~/.current_robot) #[fg=colour241,bg=default,nobold,noitalics,nounderscore] #[fg=colour247,bg=default,nobold,noitalics,nounderscore] E: #(cat ~/.current_robot_env) #(eval $POWERLINE_COMMAND tmux right -p ~/.powerline_config -R pane_id=`tmux display -p "#D"`)'
+set -g status-right-length 150
+set -g window-status-format "#[fg=colour244,bg=colour234]#I #[fg=colour240] #[fg=colour249]#W "
+set -g window-status-current-format "#[fg=colour234,bg=colour31]#[fg=colour117,bg=colour31] #I  #[fg=colour231,bold]#W #[fg=colour31,bg=colour234,nobold]"
+# vim: ft=tmux
 
 # disable possibly set visual editor
 set-environment -gu GEM_EDITOR
 
 # status bar contents
-set -g status-left-length 15
-set -g status-right '#(cat ~/.current_robot)@#(cat ~/.current_robot_env)'
-set -g status-interval 15
+#set -g status-left-length 15
+#set -g status-right '#(cat ~/.current_robot)@#(cat ~/.current_robot_env)'
+#:set -g status-interval 15
+
