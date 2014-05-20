@@ -14,7 +14,7 @@ colorscheme solarized
 set cursorline
 
 " Enable mouse in all modes
-set mouse=a
+"set mouse=a
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
