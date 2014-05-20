@@ -21,4 +21,4 @@ link_files
 
 echo "raw3-1" > ~/.current_robot
 echo "empty" > ~/.current_robot_env
-echo "/opt/ros/groovy/" > ~/.current_ws
+echo "/opt/ros/hydro/" > ~/.current_ws
